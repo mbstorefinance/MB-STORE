@@ -16,7 +16,7 @@ Aplikasi pembukuan konter pulsa berbasis PWA, dapat dipasang di Android dan digu
 5. Buka aplikasi sekali saat internet tersedia. Setelah cache terbentuk, aplikasi dapat digunakan offline.
 
 ## Fitur
-- Modal awal terpisah: Cash, GoPay, DANA, SeaBank, Pulsa DataKu.
+- Modal awal terpisah: Cash, GoPay, DANA, SeaBank, Pulsa DataKu, dan QRIS. Akun QRIS otomatis ditambahkan saat aplikasi versi baru dibuka; data lama tetap dipertahankan.
 - Penjualan dengan harga jual dan modal produk; laba dihitung otomatis.
 - Pengeluaran, tambah modal, dan transfer antar akun.
 - Saldo akun dan total saldo dihitung otomatis.

@@ -29,8 +29,10 @@
 <div class="modal" id="modal"><div class="sheet"><div class="sheethead"><h3 id="modalTitle">Tambah transaksi</h3><button class="x" onclick="closeModal()">×</button></div><form id="txForm"><div id="formFields" class="formgrid"></div><div style="display:flex;gap:8px;margin-top:16px"><button type="button" class="btn secondary" style="flex:1" onclick="closeModal()">Batal</button><button class="btn" style="flex:1" type="submit">Simpan transaksi</button></div></form></div></div>
 <script>
 const KEY='mbstore_v1';
-const DEFAULT_WALLETS=[['Cash','Uang tunai'],['GoPay','Dompet digital'],['DANA','Dompet digital'],['SeaBank','Bank'],['Pulsa DataKu','Stok pulsa']];
+const DEFAULT_WALLETS=[['Cash','Uang tunai'],['GoPay','Dompet digital'],['DANA','Dompet digital'],['SeaBank','Bank'],['Pulsa DataKu','Stok pulsa'],['QRIS','Saldo pembayaran QRIS']];
 let db=load(), filter='all';
+// Migrasi aman: tambahkan akun QRIS ke data lama tanpa mengubah saldo/transaksi yang sudah ada.
+if(!db.wallets.some(w=>w.name==='QRIS')){db.wallets.push({name:'QRIS',note:'Saldo pembayaran QRIS',opening:0});localStorage.setItem(KEY,JSON.stringify(db));}
 function fresh(){return {wallets:DEFAULT_WALLETS.map(x=>({name:x[0],note:x[1],opening:0})),tx:[],closings:[]}}
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){return fresh()}}
 function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}

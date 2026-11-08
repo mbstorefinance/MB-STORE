@@ -1,0 +1,11 @@
+{
+  "name": "MBSTORE - Pembukuan Konter Pulsa",
+  "short_name": "MBSTORE",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fb",
+  "theme_color": "#101b35",
+  "description": "Pencatatan penjualan, modal, pengeluaran, keuntungan, dan closing harian konter pulsa.",
+  "icons": []
+}
